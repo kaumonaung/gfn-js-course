@@ -32,22 +32,26 @@
       const $$ = (selector) => Array.from(document.querySelectorAll(selector));
 
       console.log('------ Descendant Combinator ------');
-      const dc = Array.from(document.querySelectorAll('li span')); // Alle span-Elemente innerhalb eines li-Element
+      // Alle span-Elemente innerhalb eines li-Element
+      const dc = Array.from(document.querySelectorAll('li span'));
       dc.forEach((el) => {
         console.log(el); // => <span>11</span> <span>21</span> <span>22</span>
       });
 
       console.log('------ Adjacent Sibling Combinator ------');
+      // Das nächste li-Element nach dem li-Element mit der id li11
       const asc = document.querySelector('li#li11 + li');
       console.log(asc); // => <li id="li12">12</li>
 
       console.log('------ General Sibling Combinator ------');
+      // Alle li-Elemente nach dem li-Element mit der id li12
       const gsc = Array.from(document.querySelectorAll('li#li12 ~ li'));
       gsc.forEach((el) => {
         console.log(el); // => <li id="li13">13</li> li id="li14">14</li> li id="li15">15</li>
       });
 
       console.log('------ Child Combinator ------');
+      // Alle span-Elemente, die direkte Kinder eines li-Elements sind
       const cc = Array.from(document.querySelectorAll('li > span'));
       cc.forEach((element) => {
         console.log(element); // => <span>11</span> <span>21</span>
