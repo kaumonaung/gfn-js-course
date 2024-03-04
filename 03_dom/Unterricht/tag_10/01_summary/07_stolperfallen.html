@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stolperfallen</title>
+  </head>
+  <body>
+    <div>
+      <progress id="progress-bar" value="50" max="100"></progress>
+    </div>
+
+    <div>
+      <label for="my_range">Wert:</label>
+      <input id="range" type="range" id="my_range" value="23" max="100" />
+    </div>
+
+    <div>
+      <ol start="100">
+        <li>Element 1</li>
+        <li>Element 2</li>
+      </ol>
+    </div>
+
+    <script>
+      const progress = document.querySelector('#progress-bar');
+      console.log(progress.value); // => 50
+      console.log(typeof progress.value); // => number
+      console.log(
+        'progress.getAttribute("value"): ',
+        progress.getAttribute('value')
+      ); // => 50
+      console.log(
+        "typeof progress.getAttribute('value')",
+        typeof progress.getAttribute('value')
+      ); // => string statt number bei progress
+
+      const rangeSlider = document.querySelector('#range');
+      console.log(rangeSlider.value); // => 23
+      console.log(typeof rangeSlider.value); // => string
+      console.log(
+        'typeof rangeSlider.getAttribute("value"):',
+        typeof rangeSlider.getAttribute('value')
+      );
+
+      const ol = document.querySelector('ol');
+      console.log(ol.start); // => 100
+      console.log(typeof ol.start); // => number
+    </script>
+  </body>
+</html>

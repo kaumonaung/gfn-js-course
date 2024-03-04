@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1>DOM Manipulation Beispiel</h1>
+
+      <ul id="list">
+        <li>Element 1</li>
+        <li>Element 2</li>
+        <li>Element 3</li>
+        <li>Element 4</li>
+      </ul>
+
+      <div>
+        <button id="btnAddBeginning">Am Anfang hinzufügen</button>
+        <button id="btnAddEnd">Am Ende hinzufügen</button>
+      </div>
+
+      <button id="remove">Entfernen</button>
+    </div>
+
+    <script>
+      const btnAddFirst = document.querySelector('#btnAddBeginning');
+      const btnAddLast = document.querySelector('#btnAddEnd');
+      const btnRemove = document.querySelector('#remove');
+
+      const ul = document.getElementById('list');
+
+      console.log(btnAddFirst);
+      console.log(btnAddLast);
+      console.log(btnRemove);
+      console.log(ul);
+
+      btnAddLast.addEventListener('click', () => {
+        console.log('Btn1 clicked');
+        const newLi = document.createElement('li'); // document.createElement() erstellt ein neues DOM-Element
+        newLi.textContent = 'Neues Element'; // [ELEMENT].textContent fügt Text innerhalb des Elements hinzu
+        console.log(newLi);
+        ul.appendChild(newLi); // .appendChild() fügt ein Element im DOM-Tree hinzu
+      });
+
+      btnAddFirst.addEventListener('click', () => {
+        console.log('Clicked btnAddFirst');
+        const newLi = document.createElement('li');
+        newLi.textContent = 'Neues Element am Anfang';
+        const firstLiInUl = ul.firstElementChild; // .firstElementChild erstes Kindelement
+        console.log(firstLiInUl);
+        ul.insertBefore(newLi, firstLiInUl); // .insertBefore() fügt ein Element vor einem anderen ein
+      });
+
+      btnRemove.addEventListener('click', () => {
+        console.log('Remove clicked');
+        const lastLi = ul.lastElementChild; // .lastElementChild letztes Kindelement
+
+        if (lastLi) {
+          ul.removeChild(lastLi);
+        }
+      });
+    </script>
+  </body>
+</html>

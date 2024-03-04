@@ -23,6 +23,7 @@ div {
 
 </style>
 */
+
 document.querySelector('div.admin-password.container input[name="username"]');
 
 // QuerySelector erlaubt auch komplexere Selektoren mit CSS-Notation
