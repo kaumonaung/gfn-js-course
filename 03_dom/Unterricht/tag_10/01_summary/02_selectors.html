@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Selectors</title>
+  </head>
+  <body>
+    <ul id="ul1">
+      <li id="li11">
+        <span>11</span>
+      </li>
+      <li id="li12">12</li>
+      <li id="li13">13</li>
+      <li id="li14">14</li>
+      <li id="li15">15</li>
+    </ul>
+    <ul id="ul2">
+      <li id="li21">
+        <span>21</span>
+      </li>
+      <li id="li22">
+        <strong>
+          <span>22</span>
+        </strong>
+      </li>
+      <li id="li23">23</li>
+    </ul>
+
+    <script>
+      const $ = (selector) => document.querySelector(selector);
+      const $$ = (selector) => Array.from(document.querySelectorAll(selector));
+
+      console.log('------ Descendant Combinator ------');
+      const dc = Array.from(document.querySelectorAll('li span')); // Alle span-Elemente innerhalb eines li-Element
+      dc.forEach((el) => {
+        console.log(el); // => <span>11</span> <span>21</span> <span>22</span>
+      });
+
+      console.log('------ Adjacent Sibling Combinator ------');
+      const asc = document.querySelector('li#li11 + li');
+      console.log(asc); // => <li id="li12">12</li>
+
+      console.log('------ General Sibling Combinator ------');
+      const gsc = Array.from(document.querySelectorAll('li#li12 ~ li'));
+      gsc.forEach((el) => {
+        console.log(el); // => <li id="li13">13</li> li id="li14">14</li> li id="li15">15</li>
+      });
+
+      console.log('------ Child Combinator ------');
+      const cc = Array.from(document.querySelectorAll('li > span'));
+      cc.forEach((element) => {
+        console.log(element); // => <span>11</span> <span>21</span>
+      });
+    </script>
+  </body>
+</html>

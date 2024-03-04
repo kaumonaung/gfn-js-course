@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS</title>
+    <style>
+      .foo {
+        color: blue;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="text">This is a paragraph.</p>
+
+    <script>
+      const $ = (selector) => document.querySelector(selector);
+
+      const p = $('#text');
+      console.log(p);
+
+      p.classList.add('foo'); // => <p id="text" class="foo">This is a paragraph.</p>
+      p.classList.remove('foo'); // => <p id="text">This is a paragraph.</p>
+      p.classList.toggle('foo'); // => <p id="text" class="foo">This is a paragraph.</p>
+
+      console.log(p.classList.item(0)); // => foo von <p id="text" class="foo">This is a paragraph.</p>
+      console.log(p.classList.contains('foo')); // => true
+    </script>
+  </body>
+</html>
