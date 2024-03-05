@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>"this" im Kontext</title>
+    <script src="main.js" async></script>
+  </head>
+  <body>
+    <h1>"this" im Kontext</h1>
+
+    <p>
+      <code>this</code> ist ein Keyword, welches sich auf Objekt bezieht. Auf
+      welches Objekt es sich bezieht hängt im Kontext ab, welches
+      <code>this</code> aufgerufen wird.
+    </p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Objekt: this => Objekt</td>
+        </tr>
+        <tr>
+          <td>Alleine stehend: this => globalen Objekt</td>
+        </tr>
+        <tr>
+          <td>Funktion (nicht strikten Modus): this => globalen Objekt</td>
+        </tr>
+        <tr>
+          <td>Funktion (strikten Modus): this => undefined</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
