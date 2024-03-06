@@ -13,7 +13,7 @@ function User(name, email) {
 }
 
 const user1 = new User('Max Mustermann', 'max.mustermann@musterfirma.de');
-console.log(user1); // => {name: 'Max Mustermann', email: max.mustermann@musterfirma.de}
+console.log(user1); // => { name: 'Max Mustermann', email: 'max.mustermann@musterfirma.de' }
 console.log(typeof user1); // => object
 
 // ====== Konstruktoreigenschaft ======
@@ -26,7 +26,7 @@ const emptyCompany = new Company();
 console.log(emptyCompany); // => { name: undefined, established: undefined }
 console.log(typeof emptyCompany); // => object
 
-const apple = new emptyCompany.constructor('Apple', 1976); // Konstruktoreigenschaft
+const apple = new emptyCompany.constructor('Apple', 1976); // => Das ist die Konstruktoreigenschaft
 console.log(apple); // => { name: 'Apple', established: 1976 }
 console.log(typeof apple); // => object
 
