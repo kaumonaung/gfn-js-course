@@ -22,11 +22,12 @@ function Company(name, established) {
   this.established = established;
 }
 
-const emptyCompany = new Company();
+const emptyCompany = new Company(); // Leere Instanz von Company
+
 console.log(emptyCompany); // => { name: undefined, established: undefined }
 console.log(typeof emptyCompany); // => object
 
-const apple = new emptyCompany.constructor('Apple', 1976); // => Das ist die Konstruktoreigenschaft
+const apple = new emptyCompany.constructor('Apple', 1976); // => Das ist die Konstruktoreigenschaft mit new .constructor()
 console.log(apple); // => { name: 'Apple', established: 1976 }
 console.log(typeof apple); // => object
 
