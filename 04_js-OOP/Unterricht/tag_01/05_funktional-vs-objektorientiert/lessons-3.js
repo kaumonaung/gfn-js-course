@@ -52,6 +52,7 @@ const cocaCola = {
 };
 
 const cocoColaCompany = Object.create(cocaCola);
-console.log(cocoColaCompany); // => {} (leeres Objekt), weil es nur die Eigenschaften von "cocaCola" erbt
+console.log(cocoColaCompany); // => {} (leeres Objekt), weil es nur die Eigenschaften von "cocaCola" in [[Prototype]]: Object kopiert, weil JavaScript in der Konsole nur eigene Attribute des Objekt zeigt, nicht vom Prototype
+
 console.log(cocoColaCompany.name); // => Coca Cola
 console.log(typeof cocoColaCompany); // => object

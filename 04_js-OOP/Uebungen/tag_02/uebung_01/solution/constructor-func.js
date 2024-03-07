@@ -11,6 +11,7 @@ Tipp: Siehe tag_01/06_funktional-vs-objektorientiert/lesson-3.js für Referenz.
 ===================
 */
 
+// Da wir eine Funktion haben, in der die Parameter den this-Kontext haben, können wir damit neue Objekte erstellen
 function Contact(name, phoneNumber) {
   this.name = name;
   this.phoneNumber = phoneNumber;

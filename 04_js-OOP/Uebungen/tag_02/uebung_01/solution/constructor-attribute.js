@@ -20,8 +20,10 @@ function Contact(name, phoneNumber) {
   };
 }
 
+// Wir haben ein Objekt auf Grundlage von Contact erstellt und wollen neue Objekte erschaffen
 const sampleContact = new Contact();
 
+// Ein neues Object wird erschaffen auf Basis des erstellten Objekts
 const contact = new sampleContact.constructor('Peter', '0123456789');
 
 console.log(contact.name); // => Peter
