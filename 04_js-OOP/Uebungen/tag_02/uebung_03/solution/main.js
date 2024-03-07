@@ -24,7 +24,9 @@ class Blogpost {
   }
 
   setContent(content) {
-    if (typeof content !== 'string') return;
+    if (typeof content !== 'string') {
+      return;
+    }
 
     if (content.length >= 20) {
       for (let i = 0; i < content.length; i = i + 20) {
@@ -34,6 +36,7 @@ class Blogpost {
       }
       return;
     }
+
     this.#content.push(content);
   }
 

@@ -32,3 +32,6 @@ class ElectricEngine extends Engine {
     );
   }
 }
+
+const tesla = new ElectricEngine(150, 14);
+tesla.logData(); // => This engine has 150 horsepower and only a consumption of 14 KW/h per 100 km.
