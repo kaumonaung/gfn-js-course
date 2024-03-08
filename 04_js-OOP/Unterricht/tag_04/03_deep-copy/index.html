@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deep Copy</title>
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <h1>Deep Copy</h1>
+
+    <p>
+      Im Gegensatz zum "shallow copy" werden beim "deep copy" nicht die
+      Referenzen sondern auch die Werte gespeichert. Dadurch kann das
+      Originalobjekt beliebig verändert werden, ohne die Kopien zu zu
+      beeinflussen.
+    </p>
+
+    <p>
+      Beim Spread-Operator werden die obersten Elemente deep copied und die
+      nested Elemente shallow copied. Der einfachste Weg, eine Deep Copy zu
+      erstellen, ist die Verwendung von <code>JSON.stringify()</code> in
+      <code>JSON.parse()</code>.
+    </p>
+  </body>
+</html>
