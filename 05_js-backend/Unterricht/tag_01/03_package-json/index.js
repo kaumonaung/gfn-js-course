@@ -6,7 +6,7 @@
 Im Terminal:
 "npm init" => erstellt uns eine package.json
 ODER
-"npm init -y" erstellt uns eine package.json mit dem Default Werten
+"npm init -y" erstellt uns eine package.json mit dem Default-Werten
 
 JSON (JavaScript Object Notation)
 

@@ -1,0 +1,1 @@
+Dieser Text wird von Node.js serverseitig in die Datei example.txt geschrieben
