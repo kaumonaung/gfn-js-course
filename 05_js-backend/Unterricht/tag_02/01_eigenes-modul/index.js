@@ -20,6 +20,6 @@ const data = {
 
 console.log(data);
 
-saveFileToJSON('max.json', data);
+saveFileToJSON('data.json', data);
 
 console.log('Datei laden:', readJSONFromFile('data.json'));

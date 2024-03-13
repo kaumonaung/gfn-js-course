@@ -43,7 +43,6 @@
 - Ein Webserver mit Express aufbauen
 - Projektstruktur aufbauen für einen Webserver mit Express
 - Verwendung von EJS als Template Engine
-- Beispiel Projekt mit dem `Express Application Generator`
 - Verwendung von Middlewares in Express
 
 **Übungen:**
