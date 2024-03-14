@@ -21,6 +21,7 @@ const express = require('express');
 const app = express();
 
 // In dem Browser unter der Adresse "http://localhost:3000/" öffnen => zeigt "Cannot GET /"
+// () => {} kann weggelassen werden
 app.listen(3000, () => {
   console.log('Server läuft auf Port 3000');
 });
