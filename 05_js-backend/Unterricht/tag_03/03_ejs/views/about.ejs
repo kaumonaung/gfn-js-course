@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Über Uns</title>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+
+    <% let array = ['apple', 'banana', 'orange']; array.map((fruit) => {%>
+    <p>Frucht: <%= fruit %></p>
+    <%_ }) %>
+
+    <div><%- htmlContent %></div>
+
+    <%# Das ist ein Kommentar in EJS %>
+  </body>
+</html>
