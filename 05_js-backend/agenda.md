@@ -55,13 +55,13 @@
 
 **Inhalt:**
 
-- Aufbau einer App nach CRUD (Create, Read, Update, Delete)
 - Routing in Express
-- Erstellung einer REST-API
+- Optional: Aufbau einer App nach CRUD (Create, Read, Update, Delete)
+- Optional: Erstellung einer REST-API
 
 **Übungen:**
 
-02 Übungen
+02 Übungen (bis Tag 05)
 
 ---
 
@@ -72,6 +72,10 @@
 - Routing und Aufbau einer RESTful-API
 - Todoapplikation nach CRUD mit Express + Rest API
 - Todoapplikation nach CRUD mit Express + Rest API + EJS
+
+**Übungen:**
+
+02 Übungen (Gleiche wie Tag 04)
 
 ---
 

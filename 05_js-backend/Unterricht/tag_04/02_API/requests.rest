@@ -1,0 +1,24 @@
+GET http://localhost:3000/products
+
+###
+POST http://localhost:3000/create-product
+Content-Type: application/json
+
+// BODY in JSON-Format
+{
+    "name": "Macbook Pro",
+    "price": 2200
+}
+
+###
+PUT http://localhost:3000/products/1710499055734
+Content-Type: application/json
+
+// BODY in JSON-Format
+{
+    "name": "Chromebook",
+    "price": 1400
+}
+
+###
+DELETE http://localhost:3000/products/1
