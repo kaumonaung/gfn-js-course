@@ -1,0 +1,18 @@
+GET http://localhost:3000/todos
+
+###
+GET http://localhost:3000/todos/2
+
+###
+POST http://localhost:3000/todo-erstellen
+Content-Type: application/json
+
+{
+    "text": "Ein neues ToDo"
+}
+
+###
+PUT http://localhost:3000/todos/1
+
+###
+DELETE http://localhost:3000/todos/2

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo Liste</title>
+  </head>
+  <body>
+    <h1>ToDo Liste</h1>
+
+    <form id="addTodoForm" method="POST">
+      <input type="text" id="newTodoText" placeholder="Enter todo" />
+      <button type="submit">Add Todo</button>
+    </form>
+
+    <ul>
+      <% todos.forEach((todo) => {%>
+      <li>
+        <form
+          class="updateTodoForm"
+          method="POST"
+          action="/todos/<%= todo.id %>"
+        >
+          <span class="todoText"> <%= todo.text %> </span>
+          <button type="submit">Mark as Done</button>
+        </form>
+
+        <form
+          class="deleteTodoForm"
+          action="/todos/<%= todo.id %>"
+          method="POST"
+        >
+          <input type="hidden" name="_method" value="DELETE" />
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+      <% }) %>
+    </ul>
+
+    <script>
+      'use strict';
+
+      const $ = (selector) => document.querySelector(selector);
+      const $$ = (selector) => Array.from(document.querySelectorAll(selector));
+
+      // ====== FUNCTIONS ======
+
+      async function handleDelete(event) {
+        event.preventDefault();
+        const form = event.target;
+
+        const response = await fetch(form.action, {
+          method: 'DELETE',
+        });
+
+        // Entfernt das Todo in der UI wenn "response" erfolgreich ist
+        if (response.status === 200) {
+          form.parentElement.remove();
+        }
+      }
+
+      async function handleUpdate(event) {
+        event.preventDefault();
+        const form = event.target;
+
+        const response = await fetch(form.action, {
+          method: 'PUT',
+        });
+
+        // Updates das Todo in der UI, wenn die Anfrage "response" erfolgreich ist
+        if (response.status === 200) {
+          const data = await response.json();
+
+          if (data.done) {
+            form.querySelector('span').style.textDecoration = 'line-through';
+          } else {
+            form.querySelector('span').style.textDecoration = 'none';
+          }
+        }
+      }
+
+      // ====== EVENT LISTENERS ======
+
+      // Todo hinzufügen (Form Submission)
+      $('#addTodoForm').addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const todoText = $('#newTodoText').value;
+
+        const response = await fetch('/todo-erstellen', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ text: todoText }),
+        });
+
+        const data = await response.json(); // Wandelt JSON in JavaScript Objekt um
+        console.log(data[data.length - 1]);
+
+        const todoList = $('ul');
+        const newTodoItem = document.createElement('li');
+        newTodoItem.innerHTML = `
+        <form
+            class="updateTodoForm"
+            action="/todos/${data[data.length - 1].id}"
+            method="POST"
+        >
+            <span> ${data[data.length - 1].text} </span>
+            <button type="submit">Mark as Done</button>
+        </form>
+        <form class="deleteTodoForm" action="/todos/${
+          data[data.length - 1].id
+        }" method="POST">
+            <input type="hidden" name="_method" value="DELETE" />
+            <button type="submit">Delete</button>
+        </form>`;
+
+        todoList.appendChild(newTodoItem);
+        $('#addTodoForm').reset(); // Input Feld leeren
+
+        // Event listeners hinzufügen auf den neuen <li> Item
+        newTodoItem
+          .querySelector('.deleteTodoForm')
+          .addEventListener('submit', handleDelete);
+
+        newTodoItem
+          .querySelector('.updateTodoForm')
+          .addEventListener('submit', handleUpdate);
+      });
+
+      // Todo updaten (Form Submission)
+      $$('.updateTodoForm').forEach((form) => {
+        form.addEventListener('submit', handleUpdate);
+      });
+
+      // Todo löschen (Form Submission)
+      $$('.deleteTodoForm').forEach((form) => {
+        form.addEventListener('submit', handleDelete);
+      });
+    </script>
+  </body>
+</html>

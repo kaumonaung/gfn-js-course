@@ -8,3 +8,14 @@
 - [Postman](https://www.postman.com/)
 - [Insomnia](https://insomnia.rest/)
 - [EJS Website](https://ejs.co/)
+
+## Terminal Befehle
+
+- `node index.js`: Startet die Ausführung einer JavaScript-Datei namens `index.js` im Node.js-Umgebung
+- `nodemon index.js`: Startet die Ausführung einer JavaScript-Datei namens `index.js` im Node.js-Umgebung und überwacht Änderungen an der Datei, um automatisch neu zu starten, durch den Package `nodemon`
+- `CTR + C`: Unterbricht den Server oder Programm im Terminal
+- `cd`: Wechselt das Arbeitsverzeichnis im Terminal
+- './': Verweist auf das aktuelle Verzeichnis
+- '../': Verweist auf das übergeordnete Verzeichnis
+- `cd ..`: Wechselt zum übergeordneten Verzeichnis
+- Pfeiltasten um alte Befehle aufzurufen: Erlaubt das Durchsuchen und Wiederverwenden vorheriger Befehle, die im Terminal eingegeben wurden
