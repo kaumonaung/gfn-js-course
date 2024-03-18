@@ -3,9 +3,9 @@ REST – Representational State Transfer
 - Representational State Transer (REST) ist eine Software-Architektur, die Bedinungen zur Funktionsweise einer API festlegt
 
 API - Application Programming Interface
-- API sind Kommunikationskanäle zwischen der App/Client und der Dankenbank/Backend-Systemen
+- API sind Kommunikationskanäle zwischen der App/Client (z.B. Browser, Smartphone, PC) und der Dankenbank/Backend-Systemen
 
-RESTful API
+RESTful API oder REST-API
 - Implementiert APIs nach REST-Architektur, da sichere, zuverlässige und effiziente Software-Standards befolgt werden
 - Bedeutet wir nutzen einheitliche Schnittschnellen (URL/URI) und HTTP-Methoden (GET, POST, PUT, DELETE etc.)
 
@@ -24,8 +24,13 @@ UPDATE: HTTP-Methoden PUT/PATCH (PUT, um alles zu updaten und PATCH, für einzel
 DELETE: HTTP-Methode DELETE
 
 req: request (Incoming Data)
+- req.body (z.B. in "Content-Type: application/json" angegeben)
+- req.params (URL Parameter, z.B. "/:userId")
+- res.query (URL Query Parameter, alles nach "?")
+
 res: response (Outgoing Data)
-next: next ist eine function
+
+next: next ist eine function (vor allem in middlewares genutzt)
 
 res.cookie() - Ermöglicht es dir, einen Cookie im Client zu erstellen.
 res.download() - Sendet eine Datei als Download an den Client.
@@ -33,8 +38,8 @@ res.json() - Ermöglicht es dir, ein Objekt in Form eines JSON-Strings an den Cl
 res.redirect('URL') - Ermöglicht es dir, den Client auf eine andere URL weiterzuleiten.
 res.render() - Rendert eine angegebene View (z.B. HTML, EJS) und sendet diese an den Client.
 res.send() - Sendet die erstellte HTTP-Response an den Client.
-res.status() - Legt den HTTP-Statuscode der Response fest.
-res.sendStatus() - Legt den HTTP-Statuscode der Response fest und sendet den HTTP-Response an den Client 
+res.status().send() - Legt den HTTP-Statuscode der Response fest.
+res.sendStatus() - Legt den HTTP-Statuscode der Response fest und sendet den HTTP-Response an den Client
 */
 
 const express = require('express');
@@ -132,7 +137,7 @@ app.delete('/products/:productId', (req, res) => {
   products.splice(products.indexOf(gesuchtesProdukt), 1);
 
   res.status(200).json({
-    message: 'Produkte wurde erfolgreich gelöscht',
+    message: 'Das Produkt wurde erfolgreich gelöscht',
     products: products,
   });
 });

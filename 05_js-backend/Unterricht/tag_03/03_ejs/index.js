@@ -19,6 +19,8 @@ const app = express();
 // View Engine setzen, die bestimmt wie HTML generiert wird
 app.set('view engine', 'ejs');
 
+// app.locals.title = 'EJS Template';
+
 app.get('/', (req, res) => {
   res.render('index', {
     title: 'EJS Template',

@@ -69,7 +69,6 @@
 
 **Inhalt:**
 
-- Routing und Aufbau einer RESTful-API
 - Todoapplikation nach CRUD mit Express + Rest API
 - Todoapplikation nach CRUD mit Express + Rest API + EJS
 

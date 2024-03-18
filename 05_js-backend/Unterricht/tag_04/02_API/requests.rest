@@ -4,14 +4,14 @@ GET http://localhost:3000/products
 POST http://localhost:3000/create-product
 Content-Type: application/json
 
-// BODY in JSON-Format
+// BODY in JSON-Format (kein JavaScript-Objekt, weil JSON steht für JavaScript Object Notation)
 {
     "name": "Macbook Pro",
     "price": 2200
 }
 
 ###
-PUT http://localhost:3000/products/1710499055734
+PUT http://localhost:3000/products/1710751223214
 Content-Type: application/json
 
 // BODY in JSON-Format
@@ -21,4 +21,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/products/1
+DELETE http://localhost:3000/products/1710751223214
