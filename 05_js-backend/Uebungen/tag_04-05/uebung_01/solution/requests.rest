@@ -1,0 +1,15 @@
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "Max",
+    "password": "123"
+}
+
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "Max"
+}

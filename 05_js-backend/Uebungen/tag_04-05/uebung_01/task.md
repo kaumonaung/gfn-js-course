@@ -12,5 +12,5 @@
 - Siehe tag_04/01_Routing und tag_03/04_middlewares als Orientierung in
 
 - Router Objekte werden über `express.Router()` erstellt und müssen über `module.exports = router` expotiert werden
-- Vergiss nicht json() in deinem Server zu erlauben
+- Vergiss nicht `json()` in deinem Server zu erlauben
 - Setzte in der "requests.rest" Datei für die POST Route "Content-Type: application/json"
