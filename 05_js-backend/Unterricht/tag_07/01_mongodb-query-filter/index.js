@@ -196,7 +196,7 @@ const matchBySubstring = async () => {
   try {
     const query = {
       email: {
-        $regex: 'homer_simpsons', // Hier wird nachgeguckt ob der Text "homer_simpsons" in der E-Mail vorhanden ist
+        $regex: /homer_simpsons/, // Hier wird nachgeguckt ob der Text "homer_simpsons" in der E-Mail vorhanden ist
       },
     };
 
@@ -252,7 +252,7 @@ const deleteManyField = async () => {
 // ======== FUNKTIONSAUFRUFE ========
 // addStudents();
 
-// matchSingleCondition();
+matchSingleCondition();
 // matchMultipleConditions();
 // matchMultipleConditionsByAND();
 // matchMultipleConditionsByOR();
