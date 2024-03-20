@@ -209,6 +209,46 @@ const matchBySubstring = async () => {
   }
 };
 
+// Delete One Field (löscht nur ein Datenfeld, in dem Fall "isStudent")
+const deleteOneField = async () => {
+  try {
+    const query = {
+      name: 'Homer Simpsons',
+    };
+
+    const data = await studentCollection.updateOne(query, {
+      $unset: { isStudent: '' },
+    });
+
+    console.log(data);
+    client.close();
+  } catch (error) {
+    console.log(error);
+    client.close();
+  }
+};
+
+// Delete Many Field (löscht alle Dokumente mit dem Feld "scores", wenn scores vorhanden)
+const deleteManyField = async () => {
+  try {
+    const query = {
+      scores: {
+        $exists: true,
+      },
+    };
+
+    const data = await studentCollection.updateMany(query, {
+      $unset: { scores: '' },
+    });
+
+    console.log(data);
+    client.close();
+  } catch (error) {
+    console.log(error);
+    client.close();
+  }
+};
+
 // ======== FUNKTIONSAUFRUFE ========
 // addStudents();
 
@@ -220,4 +260,7 @@ const matchBySubstring = async () => {
 // matchWithComparison();
 // matchByDate();
 // matchByArrayConditions();
-matchBySubstring();
+// matchBySubstring();
+
+// deleteOneField();
+// deleteManyField()
