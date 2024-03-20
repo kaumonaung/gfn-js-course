@@ -32,7 +32,7 @@ const addOneStudent = async () => {
       isStudent: true,
       scores: [85, 95, 70],
       createdAt: { $date: '2003-03-26' }, // Hier ist "$" kein MongoDB-Operator sondern ist ein Name für eine Variable, die anzeigt, dass "createdAt" ein Datum ist
-      currentDate: new Date(), // Erstellt ein aktuelles Datum,
+      currentDate: new Date(), // Erstellt ein aktuelles Datum in ISO-Format
     };
 
     await students.insertOne(data); // Das gleiche wie => await client.db('gfn_test').collection('students').insertOne(data)
