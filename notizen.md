@@ -19,3 +19,12 @@
 - '../': Verweist auf das übergeordnete Verzeichnis
 - `cd ..`: Wechselt zum übergeordneten Verzeichnis
 - Pfeiltasten um alte Befehle aufzurufen: Erlaubt das Durchsuchen und Wiederverwenden vorheriger Befehle, die im Terminal eingegeben wurden
+
+## VSCode Extensions
+
+- Live Server
+- Prettier Code
+- REST Client
+- EJS language support
+- vscode-icons (Optional)
+- vscode-pdf (Optional)
