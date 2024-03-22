@@ -8,6 +8,11 @@
 - [Postman](https://www.postman.com/)
 - [Insomnia](https://insomnia.rest/)
 - [EJS Website](https://ejs.co/)
+- [Clerk Auth](https://clerk.com/)
+- [Firebase](https://firebase.google.com/)
+- [Supabase](https://supabase.com/)
+- [Auth0](https://auth0.com/)
+- [JWT](https://jwt.io/)
 
 ## Terminal Befehle
 

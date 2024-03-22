@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:3000/products/1710751223214
+PUT http://localhost:3000/products/1711025041369
 Content-Type: application/json
 
 // BODY in JSON-Format
@@ -21,4 +21,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/products/1710751223214
+DELETE http://localhost:3000/products/1711025041369

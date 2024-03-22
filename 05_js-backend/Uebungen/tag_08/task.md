@@ -14,5 +14,5 @@
 
 - Installiere `mongoose` und `express`
 - Vergiss NICHT `app.use(express.json())` aufzurufen
-- Erstelle `app.get('/users')`, `app.get('/users/age')`, `app.post('/users')`, `app.put('/users/:id')`, `app.delete('/users')` Routes
+- Erstelle `app.get('/users')`, `app.get('/users/age?min=10&max=50')`, `app.post('/users')`, `app.put('/users/:id')`, `app.delete('/users')` Routes
 - Nutze Mongoose

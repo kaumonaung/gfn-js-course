@@ -1,0 +1,50 @@
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "username": "maxmustermann",
+    "password": "meinpassword"
+}
+
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "maxmustermann",
+    "password": "meinpassword"
+}
+
+###
+POST http://localhost:3000/posts
+Content-Type: application/json
+Authorization: Bearer <token>
+
+{
+    "title": "Mein neuer Blogbeitrag",
+    "content": "Mein Blogbeitrag"
+}
+
+###
+GET http://localhost:3000/posts
+
+###
+GET http://localhost:3000/posts/<ID HINZUFÜGEN>
+
+###
+PATCH http://localhost:3000/posts/<ID HINZUFÜGEN>
+Content-Type: application/json
+Authorization: Bearer <token>
+
+{
+    "title": "(UPDATED): Mein neuer Blogbeitrag",
+    "content": "Mein Blogbeitrag, der aktualisiert wurde"
+}
+
+###
+DELETE http://localhost:3000/posts/<ID HINZUFÜGEN>
+
+
+###
+DELETE http://localhost:3000/posts/<ID HINZUFÜGEN>
+Authorization: Bearer <token>

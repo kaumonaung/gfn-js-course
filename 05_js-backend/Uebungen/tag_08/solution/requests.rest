@@ -1,0 +1,39 @@
+GET http://localhost:3000/users
+
+###
+// %20 = Leerzeichen als HTML URL Encoding
+GET http://localhost:3000/users?name=Homer%20Simpsons
+
+###
+// %40 = @ als HTML Encoding
+GET http://localhost:3000/users?email=bart%40springfield.com
+
+###
+GET http://localhost:3000/users?email=bart%40springfield.com&name=Bart%20Simpsons
+
+###
+GET http://localhost:3000/users/age?min=5&max=14
+
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Lisa Simpson",
+  "email": "lisa_simpson@springfield.com",
+  "age": 8
+}
+
+###
+PUT http://localhost:3000/users/65fd389de5094f81e4f36fa5
+Content-Type: application/json
+
+// BODY
+{
+  "name": "Lisa Simpson",
+  "email": "lisa@springfield.com",
+  "age": 14
+}
+
+###
+DELETE http://localhost:3000/users/65fc102daf164893c6111f85

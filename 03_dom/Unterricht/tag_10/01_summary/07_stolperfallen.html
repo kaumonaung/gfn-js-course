@@ -29,14 +29,14 @@
       console.log(
         'progress.getAttribute("value"): ',
         progress.getAttribute('value')
-      ); // => 50
+      ); // => "50"
       console.log(
         "typeof progress.getAttribute('value')",
         typeof progress.getAttribute('value')
       ); // => string statt number bei progress
 
       const rangeSlider = document.querySelector('#range');
-      console.log(rangeSlider.value); // => 23
+      console.log(rangeSlider.value); // => "23"
       console.log(typeof rangeSlider.value); // => string
       console.log(
         'typeof rangeSlider.getAttribute("value"):',
