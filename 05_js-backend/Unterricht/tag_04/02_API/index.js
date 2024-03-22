@@ -26,7 +26,7 @@ DELETE: HTTP-Methode DELETE
 req: request (Incoming Data)
 - req.body (z.B. in "Content-Type: application/json" angegeben)
 - req.params (URL Parameter, z.B. "/:userId")
-- res.query (URL Query Parameter, alles nach "?")
+- req.query (URL Query Parameter, alles nach "?")
 
 res: response (Outgoing Data)
 
