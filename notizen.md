@@ -13,6 +13,11 @@
 - [Supabase](https://supabase.com/)
 - [Auth0](https://auth0.com/)
 - [JWT](https://jwt.io/)
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [CSS Reset](https://meyerweb.com/eric/tools/css/reset/)
+- [CSS Normalize](https://necolas.github.io/normalize.css/)
+- [Roadmaps](https://roadmap.sh/)
 
 ## Terminal Befehle
 
@@ -33,3 +38,7 @@
 - EJS language support
 - vscode-icons (Optional)
 - vscode-pdf (Optional)
+
+## Liste mit Begriffen
+
+- Für React / Next.js / Remix / Vite

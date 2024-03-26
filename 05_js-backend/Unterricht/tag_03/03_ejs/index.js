@@ -19,7 +19,8 @@ const app = express();
 // View Engine setzen, die bestimmt wie HTML generiert wird
 app.set('view engine', 'ejs');
 
-// app.locals.title = 'EJS Template';
+app.locals.title = 'EJS Template';
+app.locals.message = 'Die Message wird dynamisch durch EJS dargestellt.';
 
 app.get('/', (req, res) => {
   res.render('index', {
